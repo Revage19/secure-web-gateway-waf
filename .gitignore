@@ -1,0 +1,13 @@
+*.log
+
+*.tmp
+
+# Editor buffer dosyalari
+*.swp
+*.swo
+
+*.pdf
+
+# Sistem dosyaları
+.DS_Store
+Thumbs.db

@@ -1,0 +1,15 @@
+# file: srv/www
+# owner: root
+# group: swg-admins
+# flags: -s-
+user::rwx
+group::rwx
+group:swg-admins:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:swg-admins:rwx
+default:mask::rwx
+default:other::---
+
