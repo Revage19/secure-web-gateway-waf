@@ -1,13 +1,20 @@
-*.log
-
+# Temporary files
 *.tmp
-
-# Editor buffer dosyalari
 *.swp
 *.swo
 
-*.pdf
+# Logs
+*.log
 
-# Sistem dosyaları
+# SSL keys (güvenlik)
+*.key
+
+# System files
 .DS_Store
-Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Python env (ileride gerekirse)
+venv/
