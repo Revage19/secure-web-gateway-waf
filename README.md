@@ -6,7 +6,12 @@ AKİS Proje  – Secure Web Gateway &amp; WAF yapılandırması
 Bu proje, web trafiğinin güvenligini saglamak icin Secure Web Gateway ve WAF
 (WEB Application Firewall) bileşenlerini temel alan bir laboratuvar calismasidir.
 Linux uzerinde kullanici/grup yapisi, SGID, ACL ve en az yetki ilkesi uygulanmistir.
+# Hafta iki 
+Amaç; Linux üzerinde çalışan bir Nginx sunucusu için:
 
+- Kimlik ve erişim kontrolü (kullanıcı/grup, ACL, SGID, least privilege),
+- Komut satırı ile süreç (process) yönetimi,
+- Nginx log’ları üzerinden metin işleme (grep, awk, sort, regex) yaparak rapor üretme
 ## Lisans Tercihi – Neden GNU GPL v3?
 
 Bu projede GNU GPL v3 lisansini kullandim. Bunun sebebi projenin egitim ve guvenlik
