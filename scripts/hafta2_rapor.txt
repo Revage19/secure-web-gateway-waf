@@ -1,0 +1,76 @@
+===== CPU'ya Göre En Çok Kaynak Tüketen Süreçler =====
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+revage      5109  8.6  2.5 1426040 205356 ?      Sl   10:36   0:03 /usr/bin/gnome-text-editor
+revage      2734  6.3  3.6 4425464 295236 ?      Ssl  10:26   0:39 /usr/bin/gnome-shell
+revage      5053  2.1  2.1 1588984 176336 ?      Sl   10:35   0:01 /usr/bin/nautilus --gapplication-service
+revage      2513  1.5  0.2 115544 17712 ?        S<sl 10:26   0:09 /usr/bin/pipewire
+revage      4994  0.9  0.6 553120 55420 ?        Ssl  10:33   0:01 /usr/libexec/gnome-terminal-server
+root           1  0.6  0.1  23304 14368 ?        Ss   10:26   0:04 /sbin/init splash
+root        1464  0.4  0.5 2367280 40772 ?       Ssl  10:26   0:03 /usr/lib/snapd/snapd
+revage      3017  0.3  0.3 419568 30668 ?        Sl   10:26   0:02 /usr/libexec/ibus-extension-gtk3
+revage      2969  0.3  0.4 212320 38048 ?        Sl   10:26   0:02 /usr/bin/vmtoolsd -n vmusr --blockFd 3 --uinputFd 4
+
+===== Zombi Süreç Kontrolü =====
+
+===== RAM'e Göre En Çok Tüketen Süreçler =====
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+revage      2734  6.3  3.6 4425464 295236 ?      Ssl  10:26   0:39 /usr/bin/gnome-shell
+revage      5109  8.6  2.5 1426040 205356 ?      Sl   10:36   0:03 /usr/bin/gnome-text-editor
+revage      5053  2.1  2.1 1588984 176336 ?      Sl   10:35   0:01 /usr/bin/nautilus --gapplication-service
+revage      2853  0.1  1.1 275316 90664 ?        S    10:26   0:00 /usr/bin/Xwayland :0 -rootless -noreset -accessx -core -auth /run/user/1000/.mutter-Xwaylandauth.N3J8G3 -listenfd 4 -listenfd 5 -displayfd 6 -initfd 7 -byteswappedclients
+revage      3547  0.0  1.1 735756 90404 ?        Sl   10:26   0:00 /usr/libexec/mutter-x11-frames
+revage      3420  0.0  1.0 655340 84228 ?        Ssl  10:26   0:00 /usr/libexec/gsd-xsettings
+revage      2946  0.0  0.8 969796 65080 ?        Sl   10:26   0:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
+revage      3438  0.2  0.7 3209888 64136 ?       Sl   10:26   0:01 gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/app/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rastersoft.com/app
+revage      4994  0.9  0.6 553120 55420 ?        Ssl  10:33   0:01 /usr/libexec/gnome-terminal-server
+
+===== IP Adresi Analizi =====
+      4 ::1
+
+===== 4xx ve 5xx HTTP Hata Kodları =====
+      2 403
+
+===== En Çok İstek Yapan IP'ler =====
+      4 ::1
+
+===== En Çok Talep Edilen URL'ler =====
+      4 /
+
+===== NGINX Servis Logları (journalctl -u nginx) =====
+Ara 08 10:15:35 revage-VMware-Virtual-Platform systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Ara 08 10:15:35 revage-VMware-Virtual-Platform systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+-- Boot 105bb6196b5d47e7931cfd286640f387 --
+Ara 08 10:26:27 revage-VMware-Virtual-Platform systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Ara 08 10:26:27 revage-VMware-Virtual-Platform systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+
+===== Sistem Hata Kayıtları (journalctl -p 3) =====
+Ara 08 10:26:25 revage-VMware-Virtual-Platform kernel: piix4_smbus 0000:00:07.3: SMBus Host Controller not enabled!
+Ara 08 10:26:38 revage-VMware-Virtual-Platform gdm-password][2488]: gkr-pam: unable to locate daemon control file
+Ara 08 10:26:38 revage-VMware-Virtual-Platform gdm3[1841]: Gdm: on_display_added: assertion 'GDM_IS_REMOTE_DISPLAY (display)' failed
+Ara 08 10:26:39 revage-VMware-Virtual-Platform systemd[2501]: Failed to start app-gnome-gnome\x2dkeyring\x2dpkcs11-2699.scope - Application launched by gnome-session-binary.
+░░ Subject: A start job for unit UNIT has failed
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░ 
+░░ A start job for unit UNIT has finished with a failure.
+░░ 
+░░ The job identifier is 283 and the job result is failed.
+Ara 08 10:26:39 revage-VMware-Virtual-Platform systemd[2501]: Failed to start app-gnome-gnome\x2dkeyring\x2dsecrets-2704.scope - Application launched by gnome-session-binary.
+░░ Subject: A start job for unit UNIT has failed
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░ 
+░░ A start job for unit UNIT has finished with a failure.
+░░ 
+░░ The job identifier is 287 and the job result is failed.
+Ara 08 10:26:39 revage-VMware-Virtual-Platform systemd[2501]: Failed to start app-gnome-gnome\x2dkeyring\x2dssh-2697.scope - Application launched by gnome-session-binary.
+░░ Subject: A start job for unit UNIT has failed
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░ 
+░░ A start job for unit UNIT has finished with a failure.
+░░ 
+░░ The job identifier is 279 and the job result is failed.
+Ara 08 10:26:41 revage-VMware-Virtual-Platform kernel: /dev/sr1: Can't open blockdev
+Ara 08 10:26:41 revage-VMware-Virtual-Platform kernel: /dev/sr0: Can't open blockdev
+Ara 08 10:26:43 revage-VMware-Virtual-Platform gdm3[1841]: Gdm: on_display_removed: assertion 'GDM_IS_REMOTE_DISPLAY (display)' failed
