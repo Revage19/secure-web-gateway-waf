@@ -1,26 +1,26 @@
 ===== CPU'ya Göre En Çok Kaynak Tüketen Süreçler =====
 USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-revage      7775  200  0.0  11052  4808 pts/0    R+   20:17   0:00 ps aux --sort=-%cpu
-revage      2735  7.7  3.7 4439256 306164 ?      Ssl  19:32   3:30 /usr/bin/gnome-shell
-revage      7647  0.9  2.2 1591148 178148 ?      Sl   20:12   0:02 /usr/bin/nautilus --gapplication-service
-revage      2527  0.5  0.1 113220 15416 ?        S<sl 19:32   0:16 /usr/bin/pipewire
-revage      5419  0.5  4.5 1329376 364180 ?      Sl   19:37   0:14 /usr/lib/libreoffice/program/soffice.bin --writer file:///home/revage/%C4%B0ndirilenler/akis-proje-1-secure-web-gateway--waf(3).docx --splash-pipe=5
-revage      6263  0.5  0.7 705036 63520 ?        Ssl  19:49   0:09 /usr/libexec/gnome-terminal-server
-revage      3018  0.3  0.4 212320 38360 ?        Sl   19:32   0:08 /usr/bin/vmtoolsd -n vmusr --blockFd 3 --uinputFd 4
-root        1027  0.2  0.1 242304  9576 ?        Ssl  19:31   0:08 /usr/bin/vmtoolsd
-root         602  0.2  0.0      0     0 ?        S    19:31   0:07 [irq/16-vmwgfx]
+revage      2803  8.4  3.6 4414972 291728 ?      Ssl  10:15   0:21 /usr/bin/gnome-shell
+revage      3895  4.7  2.5 1423388 209460 ?      Sl   10:18   0:04 /usr/bin/gnome-text-editor
+revage      2584  4.5  0.2 114512 16636 ?        S<sl 10:15   0:11 /usr/bin/pipewire
+revage      3988  2.0  0.5 556836 42552 ?        Sl   10:20   0:00 /usr/bin/deja-dup --gapplication-service
+root           1  1.5  0.1  23344 14500 ?        Ss   10:15   0:04 /sbin/init splash
+root        1427  1.0  0.5 2367024 41264 ?       Ssl  10:15   0:02 /usr/lib/snapd/snapd
+revage      3772  0.9  0.6 555388 56316 ?        Ssl  10:16   0:01 /usr/libexec/gnome-terminal-server
+revage      3003  0.9  0.3 419544 30788 ?        Sl   10:16   0:02 /usr/libexec/ibus-extension-gtk3
+root          98  0.5  0.0      0     0 ?        S    10:15   0:01 [migration/13]
 
 ===== RAM'e Göre En Çok Tüketen Süreçler =====
 USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-revage      5419  0.5  4.5 1329376 364180 ?      Sl   19:37   0:14 /usr/lib/libreoffice/program/soffice.bin --writer file:///home/revage/%C4%B0ndirilenler/akis-proje-1-secure-web-gateway--waf(3).docx --splash-pipe=5
-revage      2735  7.7  3.7 4439256 306164 ?      Ssl  19:32   3:30 /usr/bin/gnome-shell
-revage      7647  0.9  2.2 1591148 178148 ?      Sl   20:12   0:02 /usr/bin/nautilus --gapplication-service
-revage      2920  0.0  1.1 278236 92344 ?        S    19:32   0:01 /usr/bin/Xwayland :0 -rootless -noreset -accessx -core -auth /run/user/1000/.mutter-Xwaylandauth.Z1WKH3 -listenfd 4 -listenfd 5 -displayfd 6 -initfd 7 -byteswappedclients
-revage      3578  0.0  1.1 735500 90500 ?        Sl   19:32   0:00 /usr/libexec/mutter-x11-frames
-revage      3437  0.0  1.0 655336 84156 ?        Ssl  19:32   0:00 /usr/libexec/gsd-xsettings
-revage      2994  0.0  0.8 969780 65312 ?        Sl   19:32   0:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
-revage      6263  0.5  0.7 705036 63520 ?        Ssl  19:49   0:09 /usr/libexec/gnome-terminal-server
-revage      7573  0.1  0.7 3144448 63132 ?       Sl   20:11   0:00 gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/app/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rastersoft.com/app
+revage      2803  8.4  3.6 4414972 291728 ?      Ssl  10:15   0:21 /usr/bin/gnome-shell
+revage      3895  4.7  2.5 1423388 209460 ?      Sl   10:18   0:04 /usr/bin/gnome-text-editor
+revage      2916  0.1  1.1 275308 90600 ?        S    10:16   0:00 /usr/bin/Xwayland :0 -rootless -noreset -accessx -core -auth /run/user/1000/.mutter-Xwaylandauth.0LOGH3 -listenfd 4 -listenfd 5 -displayfd 6 -initfd 7 -byteswappedclients
+revage      3597  0.1  1.1 735500 90360 ?        Sl   10:16   0:00 /usr/libexec/mutter-x11-frames
+revage      3417  0.1  1.0 655344 84160 ?        Ssl  10:16   0:00 /usr/libexec/gsd-xsettings
+revage      3048  0.1  0.8 969772 65208 ?        Sl   10:16   0:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
+revage      3439  0.4  0.7 3209980 64352 ?       Sl   10:16   0:01 gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/app/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rastersoft.com/app
+revage      3772  0.9  0.6 555388 56316 ?        Ssl  10:16   0:01 /usr/libexec/gnome-terminal-server
+revage      2905  0.1  0.5 590356 43424 ?        Ssl  10:16   0:00 /usr/libexec/evolution-source-registry
 
 ===== Zombi Süreç Kontrolü =====
 
