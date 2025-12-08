@@ -1,34 +1,58 @@
-# secure-web-gateway-waf
-AKİS Proje  – Secure Web Gateway &amp; WAF yapılandırması
-=======
-# Secure Web Gateway & WAF – AKIS Proje 1
+# Secure Web Gateway & WAF – AKİS Proje 1
 
-Bu proje, web trafiğinin güvenligini saglamak icin Secure Web Gateway ve WAF
-(WEB Application Firewall) bileşenlerini temel alan bir laboratuvar calismasidir.
-Linux uzerinde kullanici/grup yapisi, SGID, ACL ve en az yetki ilkesi uygulanmistir.
-# Hafta iki 
-Amaç; Linux üzerinde çalışan bir Nginx sunucusu için:
+Bu repo, **Açık Kaynak İşletim Sistemleri (AKİS)** dersi kapsamında geliştirilen  
+**“Secure Web Gateway & WAF (Web Application Firewall)”** projesinin kaynak kodlarını ve dokümantasyonunu içerir.
 
-- Kimlik ve erişim kontrolü (kullanıcı/grup, ACL, SGID, least privilege),
+Projenin amacı; Linux üzerinde çalışan bir **Nginx** sunucusu için:
+
+- Kimlik ve erişim kontrolü (kullanıcı / grup, ACL, SGID, least privilege),
 - Komut satırı ile süreç (process) yönetimi,
-- Nginx log’ları üzerinden metin işleme (grep, awk, sort, regex) yaparak rapor üretme
-## Lisans Tercihi – Neden GNU GPL v3?
+- Nginx access log’ları üzerinden **metin işleme pipeline’ı** ile rapor üretme,
+- `journalctl` kullanarak Nginx / SSH / UFW / kernel log’larından **güvenlik odaklı özet** çıkarma
 
-Bu projede GNU GPL v3 lisansini kullandim. Bunun sebebi projenin egitim ve guvenlik
-odakli olmasi ve kodun acik kalmasini istememdir. GPL lisansi, projenin kapali kaynak
-ticari bir urune direkt entegre edilmesini engeller ve yapilan gelistirmelerin acik
-sekilde paylasilmasini tesvik eder. Guvenlik alaninda seffaflik ve denetlenebilirlik
-onemli oldugu icin MIT yerine GPL tercih ettim.
+adımlarını **hafta hafta** uygulamaktır.
 
-## Dizın Yapisi
+---
 
-- `01-access-control/`
-  - `secure-web-gateway-waf-access-control.md` → Erişim kontrolu, ACL, SGID ve kullanici/grup yapilandirmasinin aciklamasi
-  - `getfacl_output.txt` → /srv/www dizini icin ACL ve izin ciktisi
+## 🎯 Amaç ve Kapsam
 
-## Kullanılan komutlar
+Bu proje ile:
 
-```bash
+- Basit bir web sunucusundan ziyade, **güvenlik odaklı bir “Secure Web Gateway / WAF” bileşeni** tasarlamak,
+- Linux yetki sistemi (kullanıcı, grup, ACL, SGID) kullanarak **least privilege** prensibini uygulamak,
+- `ps`, `awk`, `grep`, `sort`, `uniq`, `regex` gibi araçlarla **process ve log analizi** yapmak,
+- `journalctl` üzerinden servis ve kernel log’larını okuyup **güvenlikle ilişkili olanları seçerek** raporlamak hedeflenmiştir.
+
+---
+
+## 🧩 Sistem Gereksinimleri
+
+- Ubuntu 24.04 (veya systemd kullanan benzer bir Linux dağıtımı)
+- Nginx
+- systemd (journalctl)
+- Bash shell
+- (Opsiyonel) UFW (Uncomplicated Firewall)
+
+---
+
+## 📂 Dizin Yapısı
+
+```text
+secure-web-gateway-waf/
+├── 01-access-control/
+│   ├── secure-web-gateway-waf-access-control.md
+│   └── getfacl_output.txt
+├── scripts/
+│   ├── run.sh
+│   └── waf_journal_logs.sh
+├── hafta2_rapor.txt
+├── hafta2_journalctl_rapor.txt  (script çalışınca oluşur)
+├── LICENSE
+└── README.md
+
+---
+
+## kullanılan komutlar
 sudo groupadd swg-admins
 sudo useradd -m -G swg-admins gateway
 sudo useradd -m -G swg-admins wafengine
@@ -37,5 +61,5 @@ sudo chown root:swg-admins /srv/www
 sudo chmod 2775 /srv/www
 sudo setfacl -m g:swg-admins:rwx /srv/www
 sudo setfacl -d -m g:swg-admins:rwx /srv/www
-
+LOG="/var/log/nginx/access.log"
 
